@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBooksTable extends Migration
+class CreateSitesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,7 @@ class CreateBooksTable extends Migration
      */
     public function up()
     {
-
-        Schema::create('books', function (Blueprint $table) {
+        Schema::create('sites', function (Blueprint $table) {
 
             # Increments method will make a Primary, Auto-Incrementing field.
             # Most tables start off this way
@@ -24,14 +23,9 @@ class CreateBooksTable extends Migration
             $table->timestamps();
 
             # The rest of the fields...
-            $table->string('title');
-            $table->string('author');
-            $table->integer('published');
-            $table->string('cover');
-            $table->string('purchase_link');
-
-            # FYI: We're skipping the 'tags' field for now; more on that later.
-
+            $table->string('sitename');
+            $table->string('siteurl');
+            $table->integer('sitedesc');
         });
     }
 
@@ -42,6 +36,6 @@ class CreateBooksTable extends Migration
      */
     public function down()
     {
-        Schema::drop('books');
+        Schema::drop('sites');
     }
 }
