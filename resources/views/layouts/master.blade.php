@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>
-        {{-- Yield the title if it exists, otherwise default to 'Foobooks' --}}
-        @yield('title','Foobooks')
+        {{-- Yield the title if it exists, otherwise default to 'Site Lists' --}}
+        @yield('title','Site Lists')
     </title>
 
     <meta charset='utf-8'>
@@ -17,12 +17,34 @@
 </head>
 <body>
 
+    @if(\Session::has('flash_message'))
+        <div class='flash_message'>
+            {{ \Session::get('flash_message') }}
+        </div>
+    @endif
+
     <header>
         <img
         src='/images/form and function logo.jpg'
         style='width:300px'
         alt='form and function Logo'>
     </header>
+
+    <nav>
+    <ul>
+        @if(Auth::check())
+            <li><a href='/'>Home</a></li>
+            <li><a href='/sites/create'>Add a Site</a></li>
+            <li><a href='/logout'>Log out -- fix this</a></li>
+        @else
+            <li><a href='/'>Home</a></li>
+            <li><a href='/login'>Log in</a></li>
+            <li><a href='/register'>Register</a></li>
+        @endif
+
+    </ul>
+</nav>
+
 
     <section>
         {{-- Main page content will be yielded here --}}

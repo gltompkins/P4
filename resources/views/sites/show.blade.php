@@ -2,7 +2,7 @@
 
 
 @section('title')
-    Show book
+    Show site
 @stop
 
 
@@ -17,7 +17,7 @@ such as a page specific stylesheets.
 
 
 @section('content')
-    <h1>Show Architecure Sites: (in show.blade.php)</h1>
+    <h1>Show Architecture Sites: (in show.blade.php)</h1>
     <li>siteID: {{ $sites->id}}</li>
     <li>SiteUrl: {{ $sites->siteurl}}</li>
     <li>sitedesc: {{ $sites->sitedesc}}</li>

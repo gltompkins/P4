@@ -2,7 +2,7 @@
 
 
 @section('title')
-    Show book
+    Show site practice
 @stop
 
 
@@ -17,7 +17,7 @@ such as a page specific stylesheets.
 
 
 @section('content')
-    <h1>Show Architecure Sites: (in practice.blade.php)</h1>
+    <h1>Show Architecture Sites: (in practice.blade.php)</h1>
     @foreach($sites as $site)
         echo TEST<br>';
         <li>sitename: {{ $site->sitename}}</li>

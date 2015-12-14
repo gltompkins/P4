@@ -12,7 +12,7 @@ class CreateSiteTagTable extends Migration
      */
     public function up()
     {
-        Schema::create('book_tag', function (Blueprint $table) {
+        Schema::create('site_tag', function (Blueprint $table) {
 
             $table->increments('id');
             $table->timestamps();
@@ -36,6 +36,6 @@ class CreateSiteTagTable extends Migration
      */
     public function down()
     {
-        Schema::drop('book_tag');
+        Schema::drop('site_tag');
     }
 }

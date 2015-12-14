@@ -2,7 +2,7 @@
 
 
 @section('title')
-    Show book
+    Show site
 @stop
 
 
@@ -18,14 +18,16 @@ such as a page specific stylesheets.
 
 @section('content')
 <div class="container-fluid">
-    <h1>Architecure Sites - Full List</h1>
+    <h1>Architecture Sites - Full List</h1>
 
     <div class="row">
         @foreach($sites as $site)
-            <div class="col-md-4">{{ $site->sitename}}</div>
-            <div class="col-md-1">peer rating '4 stars'</div>
-            <div class="col-md-4"><a href='{{$site->siteurl}}'>{{$site->siteurl}}</a>
-                <br><br><div>
+            <div class="col-md-4">{{$site->sitename}}</div>
+            <div class="col-md-4"><a href='{{$site->siteurl}}'>{{$site->siteurl}}</a></div>
+            <div class="col-md-4">{{$site->sitedesc}}</div><br>
+            <a href='/sites/edit/{{$site->id}}'>Edit</a> |
+            <a href='/sites/confirm-delete/{{$site->id}}'>Delete</a>
+            <br><br><div>
         @endforeach
     </div>
 </div>

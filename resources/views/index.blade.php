@@ -10,7 +10,7 @@
 @stop
 
 @section('content')
-    <h1>Welcome to Architect Sites</h1>
+    <h1>Welcome to Architecture Sites</h1>
 @stop
 
 @section('body')

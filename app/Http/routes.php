@@ -11,10 +11,37 @@
 |
 */
 
-#Route::get('/', function () {
-#    echo '<h1>Welcome from Route get / </h1>';
-#    echo 'welcome from app/Http/routes.php';
-#});
+# Show login form
+Route::get('/login', 'Auth\AuthController@getLogin');
+
+# Process login form
+Route::post('/login', 'Auth\AuthController@postLogin');
+
+# Process logout
+Route::get('/logout', 'Auth\AuthController@getLogout');
+
+# Show registration form
+Route::get('/register', 'Auth\AuthController@getRegister');
+
+# Process registration form
+Route::post('/register', 'Auth\AuthController@postRegister');
+
+Route::get('/confirm-login-worked', function() {
+
+    # You may access the authenticated user via the Auth facade
+    $user = Auth::user();
+
+    if($user) {
+        echo 'You are logged in.';
+        dump($user->toArray());
+    } else {
+        echo 'You are not logged in.';
+    }
+
+    return;
+
+});
+
 
 Route::get('/', 'SiteController@getIndex');
 #Route::get('/', function () {
@@ -31,15 +58,17 @@ Route::get('/test', 'SiteController@test');
 Route::get('/sites', 'SiteController@getIndex');
 #});
 
+Route::get('/sites/edit/{id?}', 'SiteController@getEdit');
+Route::post('/sites/edit', 'SiteController@postEdit');
+Route::get('/sites/confirm-delete/{id?}', 'SiteController@getConfirmDelete');
+Route::get('/sites/delete/{id?}', 'SiteController@getDoDelete');
+
 Route::get('/sites/show/{id}', 'SiteController@getShow');
 
-Route::get('/sites/create', function () {
-    return 'form for creating a new websites listing';
-});
+Route::get('/sites/create', 'SiteController@getCreate');
+Route::post('/sites/create', 'SiteController@postCreate');
 
-Route::post('/sites/create', function () {
-    return 'process of creating a new websites listing';
-});
+
 
 Route::get('/about', function () {
     echo '<h1>Welcome from /about </h1>';
