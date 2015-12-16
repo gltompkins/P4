@@ -13,10 +13,24 @@ class SiteController extends Controller {
     }
 
     public function test() {
-        $sites = \p4\Site::all();
+        #debug GT
+        # Get the current logged in user
+		$user = \Auth::user();
+        if($user) {
+            echo 'Hi logged in user '.$user->name.'<br>';
+        }
+
+        # Get a user from the database
+        #$user = \p4\User::where('name','like','Jamal')->first();
+        #echo 'Hi '.$user->name.'<br>';
+
+
+        # end debug GT
+        #$sites = \p4\Site::all();
         #dump($sites);
         # this is working below
-        return view('sites.index');
+        $sites = \p4\Site::orderBy('id','DESC')->get();
+        return view('sites.index')->with('sites', $sites);
     }
 
 
