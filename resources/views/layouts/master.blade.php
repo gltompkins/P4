@@ -25,9 +25,9 @@
 
     <header>
         <img
-        src='/images/form and function logo.jpg'
+        src='/images/architecture site logo.jpg'
         style='width:300px'
-        alt='form and function Logo'>
+        alt='architecture site logo'>
     </header>
 
     <nav>
