@@ -1,27 +1,49 @@
-## Laravel PHP Framework
+## P4
+### Dynamic Web Application, DWA15 class, Project 4, Architecture Sites
+Lindal Gregg Tompkins
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+This project has these components
+1. Login required for full edit privileges
+2. Logout function
+3. Registration to create an account
+4. Create a website entry
+5. Edit a website entry
+6. Delete a website entry
+7. Add Tags to a site
+8. Default users Jill and Jamal are created from the DB seeders
+9. backend database is MySQL
+10. CRUD actions all occur in the database, driven by web app activity
+11. Navigation
+12. form Validation
+13. custom logo
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Credits: w3schools.com for references
+Susan Buck's foobooks sample application
+[https://github.com/susanBuck/foobooks.git](https://github.com/susanBuck/foobooks.git)
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+code from bootstrap.org in .css
 
-## Official Documentation
+Here's the link to the github repository
+[https://github.com/gltompkins/P4](https://github.com/gltompkins/P4)
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+and the project webpage  
+[http://p4.greggtompkins.com](http://p4.greggtompkins.com)
 
-## Contributing
+and the link to the demo video
+[https://youtu.be/P462R-zJl0U](https://youtu.be/P462R-zJl0U)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Website built using the Laravel framework
+### License
 
-## Security Vulnerabilities
+The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+
+
+
 
 ### License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
+bootstrap was used.  bootstrap.org recommends adding the license details in the .css file
+or .js file.
