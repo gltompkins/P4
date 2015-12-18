@@ -15,7 +15,4 @@
 
 @section('body')
 
-
-
-
 @stop

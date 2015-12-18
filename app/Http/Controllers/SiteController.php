@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use p4\Site;
 
 class SiteController extends Controller {
-
+    
     public function __construct() {
         # Put anything here that should happen before any of the other actions
     }
@@ -15,7 +15,7 @@ class SiteController extends Controller {
     public function test() {
         #debug GT
         # Get the current logged in user
-		$user = \Auth::user();
+        $user = \Auth::user();
         if($user) {
             echo 'Hi logged in user '.$user->name.'<br>';
         }
@@ -86,11 +86,11 @@ class SiteController extends Controller {
         }
 
         return view('sites.edit')
-            ->with([
-                'site' => $site,
-                'tags_for_checkbox' => $tags_for_checkbox,
-                'tags_for_this_site' => $tags_for_this_site,
-            ]);
+        ->with([
+            'site' => $site,
+            'tags_for_checkbox' => $tags_for_checkbox,
+            'tags_for_this_site' => $tags_for_this_site,
+        ]);
 
     }
 
@@ -121,8 +121,8 @@ class SiteController extends Controller {
     }
 
     /**
-	*
-	*/
+    *
+    */
     public function getConfirmDelete($site_id) {
 
         $site = \p4\Site::find($site_id);
@@ -131,8 +131,8 @@ class SiteController extends Controller {
     }
 
     /**
-	*
-	*/
+    *
+    */
     public function getDoDelete($site_id) {
 
         $site = \p4\Site::find($site_id);
@@ -154,55 +154,54 @@ class SiteController extends Controller {
 
     }
 
+    /**
+    * Responds to requests to GET /sitelists/create
+    */
+    public function getCreate() {
+
+        # Get all the possible tags so we can include them with checkboxes in the view
+        $tagModel = new \p4\Tag();
+        $tags_for_checkbox = $tagModel->getTagsForCheckboxes();
+
+        return view('sites.create')
+        ->with('tags_for_checkbox',$tags_for_checkbox);
+    }
 
     /**
-     * Responds to requests to GET /sitelists/create
-     */
-     public function getCreate() {
+    * Responds to requests to POST /sites/create
+    */
+    public function postCreate(Request $request) {
 
-         # Get all the possible tags so we can include them with checkboxes in the view
-         $tagModel = new \p4\Tag();
-         $tags_for_checkbox = $tagModel->getTagsForCheckboxes();
+        $this->validate(
+        $request,
+        [
+            'sitename' => 'required|min:5',
+            'siteurl' => 'required|url',
+            'sitedesc' => 'required|min:5',
+        ]
+    );
 
-         return view('sites.create')
-             ->with('tags_for_checkbox',$tags_for_checkbox);
-     }
+    # Enter site into the database
+    $site = new \p4\Site();
+    $site->sitename = $request->sitename;
+    $site->siteurl = $request->siteurl;
+    $site->sitedesc = $request->sitedesc;
+    #$site->user_id = \Auth::id(); # <--- NEW LINE
 
-     /**
-      * Responds to requests to POST /sites/create
-      */
-     public function postCreate(Request $request) {
+    $site->save();
 
-         $this->validate(
-             $request,
-             [
-                 'sitename' => 'required|min:5',
-                 'siteurl' => 'required|url',
-                 'sitedesc' => 'required|min:5',
-               ]
-         );
+    # Add the tags
+    if($request->tags) {
+        $tags = $request->tags;
+    }
+    else {
+        $tags = [];
+    }
+    $site->tags()->sync($tags);
 
-         # Enter site into the database
-         $site = new \p4\Site();
-         $site->sitename = $request->sitename;
-         $site->siteurl = $request->siteurl;
-         $site->sitedesc = $request->sitedesc;
-         #$site->user_id = \Auth::id(); # <--- NEW LINE
-
-         $site->save();
-
-         # Add the tags
-         if($request->tags) {
-             $tags = $request->tags;
-         }
-         else {
-             $tags = [];
-         }
-         $site->tags()->sync($tags);
-
-         # Done
-        \Session::flash('flash_message','Your Site was added!');
-        return redirect('/sites');
-     }
+    # Done
+    \Session::flash('flash_message','Your Site was added!');
+    return redirect('/sites');
+}
 
 }

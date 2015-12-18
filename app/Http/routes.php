@@ -42,7 +42,6 @@ Route::get('/confirm-login-worked', function() {
 
 });
 
-
 Route::get('/', 'SiteController@getIndex');
 #Route::get('/', function () {
 #    return redirect('/sites');
@@ -68,20 +67,7 @@ Route::get('/sites/show/{id}', 'SiteController@getShow');
 Route::get('/sites/create', 'SiteController@getCreate');
 Route::post('/sites/create', 'SiteController@postCreate');
 
-
-
-Route::get('/about', function () {
-    echo '<h1>Welcome from /about </h1>';
-    echo 'welcome from app/Http/routes.php';
-});
-
-Route::get('/admin', function () {
-    return view('welcome');
-});
-
-Route::get('/userProfile', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@getIndex');
 
 Route::get('/sites/practice', 'SiteController@getPracticeIndex');
 
@@ -149,8 +135,8 @@ if(App::environment('local')) {
 
     Route::get('/drop', function() {
 
-        DB::statement('DROP database archsite');
-        DB::statement('CREATE database archsite');
+        #DB::statement('DROP database archsite');
+        #DB::statement('CREATE database archsite');
 
         return 'Dropped archsite; created archsite.';
     });
