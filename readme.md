@@ -17,7 +17,9 @@ This project has these components
 12. form Validation
 13. custom logo
 
-Credits: w3schools.com for references
+Credits:
+w3schools.com for references
+
 Susan Buck's foobooks sample application
 [https://github.com/susanBuck/foobooks.git](https://github.com/susanBuck/foobooks.git)
 
@@ -30,16 +32,12 @@ and the project webpage
 [http://p4.greggtompkins.com](http://p4.greggtompkins.com)
 
 and the link to the demo video
-[https://youtu.be/P462R-zJl0U](https://youtu.be/P462R-zJl0U)
+[https://youtu.be/_yaHz-CHQqg](https://youtu.be/_yaHz-CHQqg)
+
+and the planning documentation
+[https://docs.google.com/document/d/1hj7AdSfkwKqSXHPMdWkmpBClY22Il1TG7zfCfNH9vCo/edit?usp=sharing](https://docs.google.com/document/d/1hj7AdSfkwKqSXHPMdWkmpBClY22Il1TG7zfCfNH9vCo/edit?usp=sharing)
 
 Website built using the Laravel framework
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
-
-
-
-
 
 ### License
 
