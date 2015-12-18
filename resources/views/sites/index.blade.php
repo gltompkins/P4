@@ -24,8 +24,8 @@ such as a page specific stylesheets.
         @foreach($sites as $site)
             <div class="col-md-4">{{$site->sitename}}</div>
             <div class="col-md-4"><a href='{{$site->siteurl}}'>{{$site->siteurl}}</a></div>
-            <div class="col-md-4">{{$site->sitedesc}}</div><br>
-            <a href='/sites/edit/{{$site->id}}'>Edit</a> |
+            <div class="col-md-4">{{$site->sitedesc}}</div>
+            <a href='/sites/edit/{{$site->id}}'>Edit</a>
             <a href='/sites/confirm-delete/{{$site->id}}'>Delete</a>
             <br><br><div>
         @endforeach

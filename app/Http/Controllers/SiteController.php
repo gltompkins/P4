@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use p4\Site;
 
 class SiteController extends Controller {
-    
+
     public function __construct() {
         # Put anything here that should happen before any of the other actions
     }
@@ -20,15 +20,6 @@ class SiteController extends Controller {
             echo 'Hi logged in user '.$user->name.'<br>';
         }
 
-        # Get a user from the database
-        #$user = \p4\User::where('name','like','Jamal')->first();
-        #echo 'Hi '.$user->name.'<br>';
-
-
-        # end debug GT
-        #$sites = \p4\Site::all();
-        #dump($sites);
-        # this is working below
         $sites = \p4\Site::orderBy('id','DESC')->get();
         return view('sites.index')->with('sites', $sites);
     }
@@ -186,7 +177,6 @@ class SiteController extends Controller {
     $site->sitename = $request->sitename;
     $site->siteurl = $request->siteurl;
     $site->sitedesc = $request->sitedesc;
-    #$site->user_id = \Auth::id(); # <--- NEW LINE
 
     $site->save();
 

@@ -49,13 +49,7 @@ Route::get('/', 'SiteController@getIndex');
 
 Route::get('/', 'SiteController@getIndex');
 
-Route::get('/test', 'SiteController@test');
-#Route::get('/sites', function() {
-#    echo '<h1>Welcome from /sites </h1>';
-#    echo 'welcome from app/Http/routes.php';
-
 Route::get('/sites', 'SiteController@getIndex');
-#});
 
 Route::get('/sites/edit/{id?}', 'SiteController@getEdit');
 Route::post('/sites/edit', 'SiteController@postEdit');
@@ -67,30 +61,30 @@ Route::get('/sites/show/{id}', 'SiteController@getShow');
 Route::get('/sites/create', 'SiteController@getCreate');
 Route::post('/sites/create', 'SiteController@postCreate');
 
-Route::get('/', 'WelcomeController@getIndex');
+#Route::get('/', 'WelcomeController@getIndex');
 
-Route::get('/sites/practice', 'SiteController@getPracticeIndex');
+#Route::get('/sites/practice', 'SiteController@getPracticeIndex');
 
-Route::get('/practice1', function () {
-    echo 'practice1 route';
-    echo '<h1>Test Database Query</h1>';
-    try {
-        #$results = DB::select('select sitename, siteurl from sites;');
-        $results = DB::table('sites')->get();
-        echo '<strong style="background-color:green; padding:5px;">Connection confirmed</strong>';
-        echo "<br><br>SITES table query results:<br><br>";
-        #print_r($results);
-        foreach($results as $sites) {
-            echo $sites->sitename.'<br>';
-            echo $sites->siteurl.'<br>';
-            echo '<a href="http://www.w3schools.com">W3schools.com</a></p>';
-            #echo '<a href="http://www.w3schools.com">' + $sites->siteurl. +'</a></p>';
-        }
-    }
-    catch (Exception $e) {
-        echo '<strong style="background-color:crimson; padding:5px;">Caught exception: ', $e->getMessage(), "</strong>\n";
-    }
-});
+// Route::get('/practice1', function () {
+//     echo 'practice1 route';
+//     echo '<h1>Test Database Query</h1>';
+//     try {
+//         #$results = DB::select('select sitename, siteurl from sites;');
+//         $results = DB::table('sites')->get();
+//         echo '<strong style="background-color:green; padding:5px;">Connection confirmed</strong>';
+//         echo "<br><br>SITES table query results:<br><br>";
+//         #print_r($results);
+//         foreach($results as $sites) {
+//             echo $sites->sitename.'<br>';
+//             echo $sites->siteurl.'<br>';
+//             echo '<a href="http://www.w3schools.com">W3schools.com</a></p>';
+//             #echo '<a href="http://www.w3schools.com">' + $sites->siteurl. +'</a></p>';
+//         }
+//     }
+//     catch (Exception $e) {
+//         echo '<strong style="background-color:crimson; padding:5px;">Caught exception: ', $e->getMessage(), "</strong>\n";
+//     }
+// });
 
 #Route::get('/practice/{testParam}', function ($testParam) {
 #    return 'practice with parameter: '.$testParam;

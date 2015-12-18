@@ -32,5 +32,12 @@ class SiteTagTableSeeder extends Seeder
         'tag_id' => 5,
         ]);
 
+        DB::table('site_tag')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'site_id' => 3,
+        'tag_id' => 1,
+        ]);
+
     }
 }

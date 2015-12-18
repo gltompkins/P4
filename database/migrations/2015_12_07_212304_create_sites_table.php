@@ -26,6 +26,7 @@ class CreateSitesTable extends Migration
             $table->string('sitename');
             $table->string('siteurl');
             $table->string('sitedesc');
+            $table->integer('siterating');
         });
     }
 

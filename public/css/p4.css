@@ -11,7 +11,7 @@ body{
        see http://www.w3schools.com/cssref/css_colors_legal.asp for a comparison
        to rgb and others.
        */
-    background: linear-gradient( hsla(170,90%,45%,.25), hsla(0,100%,100%,1));
+    background: linear-gradient( hsla(170,70%,55%,.25), hsla(0,100%,100%,1) );
 }
 
 /* http://mystrd.at/modern-clean-css-sticky-footer */

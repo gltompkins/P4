@@ -56,6 +56,7 @@ such as a page specific stylesheets.
                 value='{{$site->sitedesc}}'
             >
         </div>
+
         <div class='form-group'>
             <label for='tags'>Tags</label>
             @foreach($tags_for_checkbox as $tag_id => $tag)
